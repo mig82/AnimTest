@@ -20,6 +20,9 @@ define(function(){
 				//This works on Android, but NOT on iOS
 				anim.animEffect = constants.ANIMATION_EFFECT_REVEAL;
 				this.view.greetingLabel.setVisibility(true, anim);
+
+				//Adding this line solves the layout problem for the web channels.
+				//this.view.forceLayout()
 			};
 
 			this.view.expandButton.onTouchEnd = () => {
@@ -28,6 +31,9 @@ define(function(){
 				//This animation does NOT work on Android NOR iOS.
 				anim.animEffect = constants.ANIMATION_EFFECT_EXPAND;
 				this.view.greetingLabel.setVisibility(true, anim);
+
+				//Adding this line solves the layout problem for the web channels.
+				//this.view.forceLayout()
 			};
 		},
 
